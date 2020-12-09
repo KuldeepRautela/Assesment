@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements OnclickItem {
         employeeViewModel.getEmployeeData().observe(this, new Observer<List<Employee>>() {
             @Override
             public void onChanged(List<Employee> employees) {
-                if (employees == null)
+                if (employees.size()==0)
                     employeeViewModel.insertEmployeeData(populateList());
                 else {
                     employeeList.clear();
